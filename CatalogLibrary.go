@@ -5,7 +5,7 @@ import(
 
 const nmax = 1000
 
-type Buku struct {
+type Book struct {
 	bookId    int
 	title      string
 	category string
@@ -15,8 +15,26 @@ type Buku struct {
 	
 }
 
-var databuku[nmax] Buku
+var BookData[nmax] Book
 
 func main(){
+	var menu int
 
+
+}
+
+func create(){
+
+}
+
+func read(){
+
+}
+
+func update(){
+
+}
+
+func delete(){
+	
 }
