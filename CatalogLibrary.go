@@ -1,19 +1,8 @@
 package main
-import"fmt"
+import("fmt"
+		"librarycatalog/services"
+)
 
-const nmax = 1000
-
-type Book struct {
-	bookId    int
-	title      string
-	category string
-	writter string
-	publishyear string
-	status string
-	
-}
-
-var BookData[nmax] Book
 
 func main(){
 	var menu int
@@ -29,33 +18,18 @@ func main(){
 	fmt.Scan(&menu)
 
 	if menu == 1 {
-		create()
+		services.Create()
 	}else if menu == 2 {
-		fmt.Print(read())
-	}else if menu == 3 (
-		fmt.Print(update())
-	)else{
-		fmt.Print(delete())
+		read()
+	}else if menu == 3 {
+		update()
+	}else{
+		delete()
 	}
 
 
 }
 
-func create(){
-	var n int
-	
-	fmt.Println("Format : BookId,title,category,writter,publishyear,status")
-	fmt.Print("Enter Desired Amounts Of Book to be changed :")
-	fmt.Scan(&n)
-	for i := 0 ; i < n ;i++{
-	fmt.Scan(	&BookData[i].bookId,
-				&BookData[i].title,
-				&BookData[i].category,
-				&BookData[i].writter,
-				&BookData[i].publishyear,
-				&BookData[i].status)
-	}
-}
 
 func read(){
 
