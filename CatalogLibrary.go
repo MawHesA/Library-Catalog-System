@@ -1,12 +1,7 @@
 package main
-import(
-	"fmt"
-	"math"
-)
+import"fmt"
 
 func main(){
-
-	fmt.Print(math.Sqrt(81))
-	fmt.Print("Test")
-	fmt.Print("test 2")
+	fmt.Print("testbranch")
 }
+
