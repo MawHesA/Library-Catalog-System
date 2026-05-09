@@ -6,16 +6,17 @@ import(
 const nmax = 1000
 
 type Buku struct {
-	idBuku      int
-	judul       string
-	tahunTerbit int
-	kategori string
-	penulis string
+	bookId    int
+	title      string
+	category string
+	writter string
+	publishyear string
+	status string
 	
 }
 
 var databuku[nmax] Buku
 
 func main(){
-	var jumlahbuku int
+
 }
