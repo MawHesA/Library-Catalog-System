@@ -1,12 +1,21 @@
 package main
 import(
 	"fmt"
-	"math"
 )
 
-func main(){
+const nmax = 1000
 
-	fmt.Print(math.Sqrt(81))
-	fmt.Print("Test")
-	fmt.Print("test 2")
+type Buku struct {
+	idBuku      int
+	judul       string
+	tahunTerbit int
+	kategori string
+	penulis string
+	
+}
+
+var databuku[nmax] Buku
+
+func main(){
+	var jumlahbuku int
 }
