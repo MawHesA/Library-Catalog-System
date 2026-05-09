@@ -58,7 +58,7 @@ func create(){
 }
 
 func read(){
-
+	fmt.Print("test")
 }
 
 func update(){
