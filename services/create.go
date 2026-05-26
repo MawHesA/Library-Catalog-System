@@ -1,23 +1,68 @@
 package services
 
-import ("fmt"
-		"librarycatalog/gdict"
-
+import (
+	"fmt"
+	"librarycatalog/gdict"
 )
 
-func Create(){
+func Create(BookData *gdict.Data, n *int) {
 
-	var n int
-	
-	fmt.Println("Format : BookId,title,category,writter,publishyear,status")
-	fmt.Print("Enter Desired Amounts Of Book to be changed :")
-	fmt.Scan(&n)
-	for i := 0 ; i < n ;i++{
-	fmt.Scan(	&gdict.BookData[i].BookId,
-				&gdict.BookData[i].Title,
-				&gdict.BookData[i].Category,
-				&gdict.BookData[i].Writter,
-				&gdict.BookData[i].Publishyear,
-				&gdict.BookData[i].Status)
+	var amount int
+
+	fmt.Println("======================================================")
+	fmt.Println("                 ADD NEW BOOK DATA")
+	fmt.Println("======================================================")
+	fmt.Println("Input Format :")
+	fmt.Println("BookId Title Category Writter Publishyear Status")
+	fmt.Println("======================================================")
+
+	fmt.Print("Enter Total Books To Be Added : ")
+	fmt.Scan(&amount)
+
+	fmt.Println("======================================================")
+
+	for i := 0; i < amount; i++ {
+
+		fmt.Printf("Input Book Data %-3d : ", i+1)
+
+		fmt.Scan(
+			&BookData[*n].BookId,
+			&BookData[*n].Title,
+			&BookData[*n].Category,
+			&BookData[*n].Writter,
+			&BookData[*n].Publishyear,
+			&BookData[*n].Status,
+		)
+
+		*n = *n + 1
+	}
+
+	Sortingdata(BookData, *n)
+
+	fmt.Println("======================================================")
+	fmt.Println("     Book Data Successfully Added And Sorted")
+	fmt.Println("======================================================")
+}
+
+func Sortingdata(BookData *gdict.Data, n int) {
+
+	var i, j, min int
+	var temp gdict.Book
+
+	for i = 0; i < n-1; i++ {
+
+		min = i
+
+		for j = i + 1; j < n; j++ {
+
+			if BookData[j].BookId < BookData[min].BookId {
+
+				min = j
+			}
+		}
+
+		temp = BookData[i]
+		BookData[i] = BookData[min]
+		BookData[min] = temp
 	}
 }
