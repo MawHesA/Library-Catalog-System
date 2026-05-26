@@ -16,24 +16,27 @@ func main() {
 	fmt.Printf("%35s\n", "LIBRARY CATALOG MANAGEMENT")
 	fmt.Println("======================================================")
 	fmt.Printf("%-5s %-35s\n", "1.", "Add New Book Data")
-	fmt.Printf("%-5s %-35s\n", "2.", "Display Stored Books")
-	fmt.Printf("%-5s %-35s\n", "3.", "Update Existing Book")
-	fmt.Printf("%-5s %-35s\n", "4.", "Delete Existing Book")
-	fmt.Printf("%-5s %-35s\n", "5.", "Exit Program")
+	fmt.Printf("%-5s %-35s\n", "2.", "Search Data By Published Year")
+	fmt.Printf("%-5s %-35s\n", "3.", "Display Stored Books")
+	fmt.Printf("%-5s %-35s\n", "4.", "Update Existing Book")
+	fmt.Printf("%-5s %-35s\n", "5.", "Delete Existing Book")
+	fmt.Printf("%-5s %-35s\n", "6.", "Exit Program")
 	fmt.Println("======================================================")
 
 	fmt.Print("Enter Your Desired Menu : ")
 	fmt.Scan(&menu)
 
-	for menu != 5 {
+	for menu != 6 {
 
 		fmt.Println()
 
 		switch menu {
-
+		
 		case 1:
 			services.Create(&BookData, &n)
 		case 2:
+			services.Search(&BookData,n)
+		case 3:
 			fmt.Println("======================================================")
 			fmt.Println("                  STORED BOOK DATA")
 			fmt.Println("======================================================")
@@ -50,15 +53,16 @@ func main() {
 
 			services.Read(&BookData,n)
 
-		case 3:
+		case 4:
 			fmt.Println("======================================================")
 			fmt.Println("                UPDATE EXISTING BOOK")
 			fmt.Println("======================================================")
 
 			// services.Update()
 
-		case 4:
+		case 5:
 			services.Delete(&BookData,&n)
+		
 		default:
 			fmt.Println("Invalid Menu Selection.")
 			fmt.Println("Please Select The Available Menu Options.")
@@ -69,9 +73,10 @@ func main() {
 		fmt.Printf("%35s\n", "LIBRARY CATALOG MANAGEMENT")
 		fmt.Println("======================================================")
 		fmt.Printf("%-5s %-35s\n", "1.", "Add New Book Data")
-		fmt.Printf("%-5s %-35s\n", "2.", "Display Stored Books")
-		fmt.Printf("%-5s %-35s\n", "3.", "Update Existing Book")
-		fmt.Printf("%-5s %-35s\n", "4.", "Delete Existing Book")
+		fmt.Printf("%-5s %-35s\n", "2.", "Search Data By Published Year")
+		fmt.Printf("%-5s %-35s\n", "3.", "Display Stored Books")
+		fmt.Printf("%-5s %-35s\n", "4.", "Update Existing Book")
+		fmt.Printf("%-5s %-35s\n", "6.", "Delete Existing Book")
 		fmt.Printf("%-5s %-35s\n", "5.", "Exit Program")
 		fmt.Println("======================================================")
 		fmt.Print("Enter Menu : ")
