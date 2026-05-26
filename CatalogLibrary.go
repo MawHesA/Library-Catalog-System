@@ -48,7 +48,7 @@ func main() {
 
 			fmt.Println("---------------------------------------------------------------------------------------------")
 
-			services.Read(BookData, n)
+			services.Read(&BookData,n)
 
 		case 3:
 			fmt.Println("======================================================")
@@ -58,18 +58,21 @@ func main() {
 			// services.Update()
 
 		case 4:
-			fmt.Println("======================================================")
-			fmt.Println("                DELETE EXISTING BOOK")
-			fmt.Println("======================================================")
-
-			// services.Delete()
-
+			services.Delete(&BookData,&n)
 		default:
 			fmt.Println("Invalid Menu Selection.")
 			fmt.Println("Please Select The Available Menu Options.")
 		}
 
 		fmt.Println()
+		fmt.Println("======================================================")
+		fmt.Printf("%35s\n", "LIBRARY CATALOG MANAGEMENT")
+		fmt.Println("======================================================")
+		fmt.Printf("%-5s %-35s\n", "1.", "Add New Book Data")
+		fmt.Printf("%-5s %-35s\n", "2.", "Display Stored Books")
+		fmt.Printf("%-5s %-35s\n", "3.", "Update Existing Book")
+		fmt.Printf("%-5s %-35s\n", "4.", "Delete Existing Book")
+		fmt.Printf("%-5s %-35s\n", "5.", "Exit Program")
 		fmt.Println("======================================================")
 		fmt.Print("Enter Menu : ")
 		fmt.Scan(&menu)

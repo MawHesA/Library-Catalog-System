@@ -4,7 +4,7 @@ import( "fmt"
 		"librarycatalog/gdict"
 )
 
-func Read(BookData gdict.Data,n int){
+func Read(BookData *gdict.Data,n int){
 
 	for i := 0;i < n;i++{
 		fmt.Printf("%-10d %-20s %-15s %-15s %-10d %-15s\n",
@@ -15,4 +15,5 @@ func Read(BookData gdict.Data,n int){
 			BookData[i].Publishyear,
 			BookData[i].Status)
 	}
+	fmt.Print()
 }

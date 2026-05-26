@@ -8,10 +8,18 @@ import (
 func Create(BookData *gdict.Data, n *int) {
 
 	var amount int
+	var menu string
 
 	fmt.Println("======================================================")
 	fmt.Println("                 ADD NEW BOOK DATA")
 	fmt.Println("======================================================")
+	fmt.Println("Type 'back' to return or press any number to continue")
+	
+	fmt.Scan(&menu)
+	if menu == "back"{
+		return
+	}
+
 	fmt.Println("Input Format :")
 	fmt.Println("BookId Title Category Writter Publishyear Status")
 	fmt.Println("======================================================")
@@ -19,8 +27,17 @@ func Create(BookData *gdict.Data, n *int) {
 	fmt.Print("Enter Total Books To Be Added : ")
 	fmt.Scan(&amount)
 
-	fmt.Println("======================================================")
+	for amount <= 0 {
 
+	fmt.Println("Input must be more than 0")
+
+	fmt.Print("Enter Total Books To Be Added : ")
+	fmt.Scan(&amount)
+}
+
+	fmt.Println()
+	fmt.Println("======================================================")
+	
 	for i := 0; i < amount; i++ {
 
 		fmt.Printf("Input Book Data %-3d : ", i+1)
