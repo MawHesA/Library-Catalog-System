@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	var menu int
+	var menu,idx int
 	var BookData gdict.Data
 	var n int
 
@@ -35,7 +35,8 @@ func main() {
 		case 1:
 			services.Create(&BookData, &n)
 		case 2:
-			services.Search(&BookData,n)
+			services.Search(&BookData,n,&idx)
+	
 		case 3:
 			fmt.Println("======================================================")
 			fmt.Println("                  STORED BOOK DATA")
@@ -76,8 +77,8 @@ func main() {
 		fmt.Printf("%-5s %-35s\n", "2.", "Search Data By Published Year")
 		fmt.Printf("%-5s %-35s\n", "3.", "Display Stored Books")
 		fmt.Printf("%-5s %-35s\n", "4.", "Update Existing Book")
-		fmt.Printf("%-5s %-35s\n", "6.", "Delete Existing Book")
-		fmt.Printf("%-5s %-35s\n", "5.", "Exit Program")
+		fmt.Printf("%-5s %-35s\n", "5.", "Delete Existing Book")
+		fmt.Printf("%-5s %-35s\n", "6.", "Exit Program")
 		fmt.Println("======================================================")
 		fmt.Print("Enter Menu : ")
 		fmt.Scan(&menu)
