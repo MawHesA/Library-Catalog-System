@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
+	"librarycatalog/controller"
 	"librarycatalog/gdict"
-	"librarycatalog/services"
+	"librarycatalog/middleware"
 )
 
 func main() {
@@ -33,9 +34,9 @@ func main() {
 		switch menu {
 
 		case 1:
-			services.Create(&BookData, &n)
+			controller.Create(&BookData, &n)
 		case 2:
-			services.Search(&BookData, n, &idx)
+			middleware.Search(&BookData, n, &idx)
 
 		case 3:
 			fmt.Println("======================================================")
@@ -52,17 +53,17 @@ func main() {
 
 			fmt.Println("---------------------------------------------------------------------------------------------")
 
-			services.Read(&BookData, n)
+			controller.Read(&BookData, n)
 
 		case 4:
 			fmt.Println("======================================================")
 			fmt.Println("                UPDATE EXISTING BOOK")
 			fmt.Println("======================================================")
 
-			services.Update(&BookData, &n)
+			controller.Update(&BookData, &n)
 
 		case 5:
-			services.Delete(&BookData, &n)
+			controller.Delete(&BookData, &n)
 
 		default:
 			fmt.Println("Invalid Menu Selection.")

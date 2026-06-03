@@ -1,4 +1,4 @@
-package services
+package controller
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ func Delete(BookData *gdict.Data, n *int) {
 
 	var target int
 	var found int
-	var confirmation,menu string
+	var confirmation, menu string
 
 	found = -1
 
@@ -27,18 +27,18 @@ func Delete(BookData *gdict.Data, n *int) {
 	fmt.Println("======================================================")
 
 	Read(BookData, *n)
-	
+
 	fmt.Println("Type 'back' to return or press any number to continue")
 	fmt.Scan(&menu)
-	
-	if menu == "back"{
+
+	if menu == "back" {
 		return
 	}
 
 	fmt.Print("Enter Book ID To Delete : ")
 	fmt.Scan(&target)
 	fmt.Println()
-	
+
 	for i := 0; i < *n; i++ {
 		if BookData[i].BookId == target {
 			found = i
@@ -53,7 +53,7 @@ func Delete(BookData *gdict.Data, n *int) {
 
 		return
 	}
-	
+
 	fmt.Println("Are you sure want to delete the data : y/n")
 	fmt.Scan(&confirmation)
 

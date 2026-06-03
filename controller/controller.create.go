@@ -1,4 +1,4 @@
-package services
+package controller
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ func Create(BookData *gdict.Data, n *int) {
 	fmt.Println("                 ADD NEW BOOK DATA")
 	fmt.Println("======================================================")
 	fmt.Println("Type 'back' to return or press any number to continue")
-	
+
 	fmt.Scan(&menu)
-	if menu == "back"{
+	if menu == "back" {
 		return
 	}
 
@@ -29,15 +29,15 @@ func Create(BookData *gdict.Data, n *int) {
 
 	for amount <= 0 {
 
-	fmt.Println("Input must be more than 0")
+		fmt.Println("Input must be more than 0")
 
-	fmt.Print("Enter Total Books To Be Added : ")
-	fmt.Scan(&amount)
-}
+		fmt.Print("Enter Total Books To Be Added : ")
+		fmt.Scan(&amount)
+	}
 
 	fmt.Println()
 	fmt.Println("======================================================")
-	
+
 	for i := 0; i < amount; i++ {
 
 		fmt.Printf("Input Book Data %-3d : ", i+1)
