@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	var menu,idx int
+	var menu, idx int
 	var BookData gdict.Data
 	var n int
 
@@ -31,12 +31,12 @@ func main() {
 		fmt.Println()
 
 		switch menu {
-		
+
 		case 1:
 			services.Create(&BookData, &n)
 		case 2:
-			services.Search(&BookData,n,&idx)
-	
+			services.Search(&BookData, n, &idx)
+
 		case 3:
 			fmt.Println("======================================================")
 			fmt.Println("                  STORED BOOK DATA")
@@ -52,18 +52,18 @@ func main() {
 
 			fmt.Println("---------------------------------------------------------------------------------------------")
 
-			services.Read(&BookData,n)
+			services.Read(&BookData, n)
 
 		case 4:
 			fmt.Println("======================================================")
 			fmt.Println("                UPDATE EXISTING BOOK")
 			fmt.Println("======================================================")
 
-			// services.Update()
+			services.Update(&BookData, &n)
 
 		case 5:
-			services.Delete(&BookData,&n)
-		
+			services.Delete(&BookData, &n)
+
 		default:
 			fmt.Println("Invalid Menu Selection.")
 			fmt.Println("Please Select The Available Menu Options.")
