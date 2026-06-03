@@ -2,10 +2,10 @@ package middleware
 
 import (
 	"fmt"
-	"librarycatalog/gdict"
+	"librarycatalog/global"
 )
 
-func Search(BookData *gdict.Data, n int, idx *int) {
+func Search(BookData *global.Data, n int, idx *int) {
 	var i int
 	var target int
 	var menu string

@@ -2,10 +2,10 @@ package controller
 
 import (
 	"fmt"
-	"librarycatalog/gdict"
+	"librarycatalog/global"
 )
 
-func Read(BookData *gdict.Data, n int) {
+func Read(BookData *global.Data, n int) {
 
 	for i := 0; i < n; i++ {
 		fmt.Printf("%-10d %-20s %-15s %-15s %-10d %-15s\n",

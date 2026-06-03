@@ -2,10 +2,11 @@ package controller
 
 import (
 	"fmt"
-	"librarycatalog/gdict"
+	"librarycatalog/global"
+	"librarycatalog/middleware"
 )
 
-func Create(BookData *gdict.Data, n *int) {
+func Create(BookData *global.Data, n *int) {
 
 	var amount int
 	var menu string
@@ -54,32 +55,9 @@ func Create(BookData *gdict.Data, n *int) {
 		*n = *n + 1
 	}
 
-	Sortingdata(BookData, *n)
+	middleware.Sortingdata(BookData, *n)
 
 	fmt.Println("======================================================")
 	fmt.Println("     Book Data Successfully Added And Sorted")
 	fmt.Println("======================================================")
-}
-
-func Sortingdata(BookData *gdict.Data, n int) {
-
-	var i, j, min int
-	var temp gdict.Book
-
-	for i = 0; i < n-1; i++ {
-
-		min = i
-
-		for j = i + 1; j < n; j++ {
-
-			if BookData[j].BookId < BookData[min].BookId {
-
-				min = j
-			}
-		}
-
-		temp = BookData[i]
-		BookData[i] = BookData[min]
-		BookData[min] = temp
-	}
 }

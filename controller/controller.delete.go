@@ -2,10 +2,10 @@ package controller
 
 import (
 	"fmt"
-	"librarycatalog/gdict"
+	"librarycatalog/global"
 )
 
-func Delete(BookData *gdict.Data, n *int) {
+func Delete(BookData *global.Data, n *int) {
 
 	var target int
 	var found int

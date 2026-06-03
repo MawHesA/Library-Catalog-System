@@ -3,15 +3,18 @@ package main
 import (
 	"fmt"
 	"librarycatalog/controller"
-	"librarycatalog/gdict"
+	"librarycatalog/global"
 	"librarycatalog/middleware"
+	"librarycatalog/model"
 )
 
 func main() {
 
 	var menu, idx int
-	var BookData gdict.Data
+	var BookData global.Data
 	var n int
+
+	model.LoadDummyData(&BookData, &n)
 
 	fmt.Println("======================================================")
 	fmt.Printf("%35s\n", "LIBRARY CATALOG MANAGEMENT")

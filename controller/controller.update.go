@@ -2,10 +2,10 @@ package controller
 
 import (
 	"fmt"
-	"librarycatalog/gdict"
+	"librarycatalog/global"
 )
 
-func Update(BookData *gdict.Data, n *int) {
+func Update(BookData *global.Data, n *int) {
 
 	var target int
 	var found int
