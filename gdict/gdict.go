@@ -1,15 +1,15 @@
 package gdict
 
-const nmax = 1000
+const Nmax = 1000
 
 type Book struct {
 	BookId    int
 	Title      string
 	Category string
 	Writter string
-	Publishyear string
+	Publishyear int
 	Status string
 	
 }
 
-var BookData[nmax] Book
+type Data [Nmax]Book

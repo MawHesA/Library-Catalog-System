@@ -1,44 +1,91 @@
 package main
-import("fmt"
-		"librarycatalog/services"
+
+import (
+	"fmt"
+	"librarycatalog/gdict"
+	"librarycatalog/services"
 )
 
+func main() {
 
-func main(){
-	var menu int
+	var menu, idx int
+	var BookData gdict.Data
+	var n int
 
-	fmt.Println("Menu")
-	fmt.Println("1. Add Data")
-	fmt.Println("2. Data Stored")
-	fmt.Println("3. Update Existed Data")
-	fmt.Println("4. Delete Existed Data")
+	fmt.Println("======================================================")
+	fmt.Printf("%35s\n", "LIBRARY CATALOG MANAGEMENT")
+	fmt.Println("======================================================")
+	fmt.Printf("%-5s %-35s\n", "1.", "Add New Book Data")
+	fmt.Printf("%-5s %-35s\n", "2.", "Search Data By Published Year")
+	fmt.Printf("%-5s %-35s\n", "3.", "Display Stored Books")
+	fmt.Printf("%-5s %-35s\n", "4.", "Update Existing Book")
+	fmt.Printf("%-5s %-35s\n", "5.", "Delete Existing Book")
+	fmt.Printf("%-5s %-35s\n", "6.", "Exit Program")
+	fmt.Println("======================================================")
 
-
-	fmt.Print("Entered the desired number :")
+	fmt.Print("Enter Your Desired Menu : ")
 	fmt.Scan(&menu)
 
-	if menu == 1 {
-		services.Create()
-	}else if menu == 2 {
-		read()
-	}else if menu == 3 {
-		update()
-	}else{
-		delete()
+	for menu != 6 {
+
+		fmt.Println()
+
+		switch menu {
+
+		case 1:
+			services.Create(&BookData, &n)
+		case 2:
+			services.Search(&BookData, n, &idx)
+
+		case 3:
+			fmt.Println("======================================================")
+			fmt.Println("                  STORED BOOK DATA")
+			fmt.Println("======================================================")
+
+			fmt.Printf("%-10s %-20s %-15s %-15s %-10s %-12s\n",
+				"BOOK ID",
+				"TITLE",
+				"CATEGORY",
+				"WRITTER",
+				"YEAR",
+				"STATUS")
+
+			fmt.Println("---------------------------------------------------------------------------------------------")
+
+			services.Read(&BookData, n)
+
+		case 4:
+			fmt.Println("======================================================")
+			fmt.Println("                UPDATE EXISTING BOOK")
+			fmt.Println("======================================================")
+
+			services.Update(&BookData, &n)
+
+		case 5:
+			services.Delete(&BookData, &n)
+
+		default:
+			fmt.Println("Invalid Menu Selection.")
+			fmt.Println("Please Select The Available Menu Options.")
+		}
+
+		fmt.Println()
+		fmt.Println("======================================================")
+		fmt.Printf("%35s\n", "LIBRARY CATALOG MANAGEMENT")
+		fmt.Println("======================================================")
+		fmt.Printf("%-5s %-35s\n", "1.", "Add New Book Data")
+		fmt.Printf("%-5s %-35s\n", "2.", "Search Data By Published Year")
+		fmt.Printf("%-5s %-35s\n", "3.", "Display Stored Books")
+		fmt.Printf("%-5s %-35s\n", "4.", "Update Existing Book")
+		fmt.Printf("%-5s %-35s\n", "5.", "Delete Existing Book")
+		fmt.Printf("%-5s %-35s\n", "6.", "Exit Program")
+		fmt.Println("======================================================")
+		fmt.Print("Enter Menu : ")
+		fmt.Scan(&menu)
 	}
 
-
-}
-
-
-func read(){
-	fmt.Print("test")
-}
-
-func update(){
-
-}
-
-func delete(){
-
+	fmt.Println()
+	fmt.Println("======================================================")
+	fmt.Println("     Thank You For Using Library Catalog System")
+	fmt.Println("======================================================")
 }
