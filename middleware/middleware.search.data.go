@@ -1,10 +1,11 @@
-package services
+package middleware
 
-import("fmt"
-		"librarycatalog/gdict"
+import (
+	"fmt"
+	"librarycatalog/global"
 )
 
-func Search(BookData *gdict.Data,n int,idx *int){
+func Search(BookData *global.Data, n int, idx *int) {
 	var i int
 	var target int
 	var menu string
@@ -12,16 +13,16 @@ func Search(BookData *gdict.Data,n int,idx *int){
 	*idx = 1
 
 	fmt.Println("Type 'back' to return or press any number to continue")
-	
+
 	fmt.Scan(&menu)
-	if menu == "back"{
+	if menu == "back" {
 		return
 	}
 	fmt.Println("============================================")
 	fmt.Print("Type the desired Year of publish book :")
 	fmt.Scan(&target)
-	
-	for i = 0;i < n;i++{
+
+	for i = 0; i < n; i++ {
 
 		if *idx == 1 {
 			fmt.Println("========================== DATA FOUND ==========================")
@@ -34,15 +35,15 @@ func Search(BookData *gdict.Data,n int,idx *int){
 				"STATUS")
 			*idx = -1
 		}
-		if BookData[i].Publishyear == target{
+		if BookData[i].Publishyear == target {
 			*idx = i
 			fmt.Printf("%-10d %-20s %-15s %-15s %-10d %-15s\n",
-			BookData[*idx].BookId,
-			BookData[*idx].Title,
-			BookData[*idx].Category,
-			BookData[*idx].Writter,
-			BookData[*idx].Publishyear,
-			BookData[*idx].Status)
+				BookData[*idx].BookId,
+				BookData[*idx].Title,
+				BookData[*idx].Category,
+				BookData[*idx].Writter,
+				BookData[*idx].Publishyear,
+				BookData[*idx].Status)
 		}
 	}
 

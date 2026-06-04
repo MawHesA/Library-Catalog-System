@@ -1,11 +1,12 @@
-package services
+package controller
 
 import (
 	"fmt"
-	"librarycatalog/gdict"
+	"librarycatalog/global"
+	"librarycatalog/middleware"
 )
 
-func Create(BookData *gdict.Data, n *int) {
+func Create(BookData *global.Data, n *int) {
 
 	var amount int
 	var menu string
@@ -14,9 +15,9 @@ func Create(BookData *gdict.Data, n *int) {
 	fmt.Println("                 ADD NEW BOOK DATA")
 	fmt.Println("======================================================")
 	fmt.Println("Type 'back' to return or press any number to continue")
-	
+
 	fmt.Scan(&menu)
-	if menu == "back"{
+	if menu == "back" {
 		return
 	}
 
@@ -29,15 +30,15 @@ func Create(BookData *gdict.Data, n *int) {
 
 	for amount <= 0 {
 
-	fmt.Println("Input must be more than 0")
+		fmt.Println("Input must be more than 0")
 
-	fmt.Print("Enter Total Books To Be Added : ")
-	fmt.Scan(&amount)
-}
+		fmt.Print("Enter Total Books To Be Added : ")
+		fmt.Scan(&amount)
+	}
 
 	fmt.Println()
 	fmt.Println("======================================================")
-	
+
 	for i := 0; i < amount; i++ {
 
 		fmt.Printf("Input Book Data %-3d : ", i+1)
@@ -54,32 +55,9 @@ func Create(BookData *gdict.Data, n *int) {
 		*n = *n + 1
 	}
 
-	Sortingdata(BookData, *n)
+	middleware.Sortingdata(BookData, *n)
 
 	fmt.Println("======================================================")
 	fmt.Println("     Book Data Successfully Added And Sorted")
 	fmt.Println("======================================================")
-}
-
-func Sortingdata(BookData *gdict.Data, n int) {
-
-	var i, j, min int
-	var temp gdict.Book
-
-	for i = 0; i < n-1; i++ {
-
-		min = i
-
-		for j = i + 1; j < n; j++ {
-
-			if BookData[j].BookId < BookData[min].BookId {
-
-				min = j
-			}
-		}
-
-		temp = BookData[i]
-		BookData[i] = BookData[min]
-		BookData[min] = temp
-	}
 }
