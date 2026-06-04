@@ -3,6 +3,7 @@ package controller
 import (
 	"fmt"
 	"librarycatalog/global"
+	handler "librarycatalog/handler/update"
 )
 
 func Update(BookData *global.Data, n *int) {
@@ -14,16 +15,11 @@ func Update(BookData *global.Data, n *int) {
 	found = -1
 
 	if *n == 0 {
-		fmt.Println("======================================================")
-		fmt.Println("            THERE IS NO DATA TO UPDATE")
-		fmt.Println("======================================================")
-
+		handler.PrintNoDataToUpdate()
 		return
 	}
 
-	fmt.Println("======================================================")
-	fmt.Println("        CHOOSE THE BOOK ID THAT WILL BE UPDATED")
-	fmt.Println("======================================================")
+	handler.PrintChooseDataToUpdate()
 
 	Read(BookData, *n)
 	fmt.Println("Type 'back' to return or press any number to continue")
@@ -44,9 +40,7 @@ func Update(BookData *global.Data, n *int) {
 	}
 
 	if found == -1 {
-		fmt.Println("======================================================")
-		fmt.Println("              BOOK DATA NOT FOUND")
-		fmt.Println("======================================================")
+		handler.PrintBookNotFound()
 		return
 	}
 
