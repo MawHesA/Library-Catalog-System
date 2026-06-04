@@ -3,6 +3,7 @@ package controller
 import (
 	"fmt"
 	"librarycatalog/global"
+	handler "librarycatalog/handler/create"
 	"librarycatalog/middleware"
 )
 
@@ -11,9 +12,7 @@ func Create(BookData *global.Data, n *int) {
 	var amount int
 	var menu string
 
-	fmt.Println("======================================================")
-	fmt.Println("                 ADD NEW BOOK DATA")
-	fmt.Println("======================================================")
+	handler.PrintAddNewBookData()
 	fmt.Println("Type 'back' to return or press any number to continue")
 
 	fmt.Scan(&menu)
