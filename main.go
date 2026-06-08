@@ -6,6 +6,7 @@ import (
 	"librarycatalog/global"
 	handlerInvalid "librarycatalog/handler/invalid"
 	handlerRead "librarycatalog/handler/read"
+	handlerUpdate "librarycatalog/handler/update"
 	"librarycatalog/middleware"
 	"librarycatalog/model"
 	handlerView "librarycatalog/view"
@@ -36,19 +37,11 @@ func main() {
 
 		case 3:
 
-			fmt.Printf("%-10s %-20s %-15s %-15s %-10s %-12s\n",
-				"BOOK ID",
-				"TITLE",
-				"CATEGORY",
-				"WRITTER",
-				"YEAR",
-				"STATUS")
-
-			fmt.Println("---------------------------------------------------------------------------------------------")
+			handlerRead.PrintGetData()
 			controller.Read(&BookData, n)
 
 		case 4:
-			handlerRead.PrintStoredBookData()
+			handlerUpdate.PrintStoredBookData()
 			controller.Update(&BookData, &n)
 
 		case 5:
