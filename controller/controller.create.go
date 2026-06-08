@@ -55,8 +55,5 @@ func Create(BookData *global.Data, n *int) {
 	}
 
 	middleware.Sortingdata(BookData, *n)
-
-	fmt.Println("======================================================")
-	fmt.Println("     Book Data Successfully Added And Sorted")
-	fmt.Println("======================================================")
+	handler.PrintSuccessAddedData()
 }

@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"librarycatalog/controller"
 	"librarycatalog/global"
+	handlerInvalid "librarycatalog/handler/invalid"
+	handlerRead "librarycatalog/handler/read"
 	"librarycatalog/middleware"
 	"librarycatalog/model"
 )
@@ -42,9 +44,6 @@ func main() {
 			middleware.Search(&BookData, n, &idx)
 
 		case 3:
-			fmt.Println("======================================================")
-			fmt.Println("                  STORED BOOK DATA")
-			fmt.Println("======================================================")
 
 			fmt.Printf("%-10s %-20s %-15s %-15s %-10s %-12s\n",
 				"BOOK ID",
@@ -55,22 +54,17 @@ func main() {
 				"STATUS")
 
 			fmt.Println("---------------------------------------------------------------------------------------------")
-
 			controller.Read(&BookData, n)
 
 		case 4:
-			fmt.Println("======================================================")
-			fmt.Println("                UPDATE EXISTING BOOK")
-			fmt.Println("======================================================")
-
+			handlerRead.PrintStoredBookData()
 			controller.Update(&BookData, &n)
 
 		case 5:
 			controller.Delete(&BookData, &n)
 
 		default:
-			fmt.Println("Invalid Menu Selection.")
-			fmt.Println("Please Select The Available Menu Options.")
+			handlerInvalid.PrintInvalidMenu()
 		}
 
 		fmt.Println()
