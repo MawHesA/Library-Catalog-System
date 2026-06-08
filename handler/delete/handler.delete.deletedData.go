@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-func PrintAddedData() {
+func PrintDeletedData() {
 	fmt.Println("======================================================")
-	fmt.Println("     Book Data Successfully Added And Sorted")
+	fmt.Println("         BOOK DATA SUCCESSFULLY DELETED")
 	fmt.Println("======================================================")
 }
