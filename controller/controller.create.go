@@ -55,5 +55,5 @@ func Create(BookData *global.Data, n *int) {
 	}
 
 	middleware.Sortingdata(BookData, *n)
-	handler.PrintSuccessAddedData()
+	handler.PrintAddedData()
 }

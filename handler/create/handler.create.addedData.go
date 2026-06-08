@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func PrintSuccessAddedData() {
+func PrintAddedData() {
 	fmt.Println("======================================================")
 	fmt.Println("     Book Data Successfully Added And Sorted")
 	fmt.Println("======================================================")
