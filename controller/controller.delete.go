@@ -67,8 +67,5 @@ func Delete(BookData *global.Data, n *int) {
 
 	*n = *n - 1
 
-	fmt.Println("======================================================")
-	fmt.Println("         BOOK DATA SUCCESSFULLY DELETED")
-	fmt.Println("======================================================")
-
+	handler.PrintDeletedData()
 }
