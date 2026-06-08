@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func PrintAddNewBookData() {
+func PrintStoredBookData() {
 	fmt.Println("======================================================")
 	fmt.Println("                  STORED BOOK DATA")
 	fmt.Println("======================================================")
