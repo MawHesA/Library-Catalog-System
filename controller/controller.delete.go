@@ -3,6 +3,7 @@ package controller
 import (
 	"fmt"
 	"librarycatalog/global"
+	handler "librarycatalog/handler/delete"
 )
 
 func Delete(BookData *global.Data, n *int) {
@@ -15,17 +16,11 @@ func Delete(BookData *global.Data, n *int) {
 
 	if *n == 0 {
 
-		fmt.Println("======================================================")
-		fmt.Println("            THERE IS NO DATA TO DELETE")
-		fmt.Println("======================================================")
-
+		handler.PrintNoDataToDelete()
 		return
 	}
 
-	fmt.Println("======================================================")
-	fmt.Println("        CHOOSE THE BOOK ID THAT WILL BE DELETED")
-	fmt.Println("======================================================")
-
+	handler.PrintChooseDataToUpdate()
 	Read(BookData, *n)
 
 	fmt.Println("Type 'back' to return or press any number to continue")
@@ -47,10 +42,7 @@ func Delete(BookData *global.Data, n *int) {
 
 	if found == -1 {
 
-		fmt.Println("======================================================")
-		fmt.Println("              BOOK DATA NOT FOUND")
-		fmt.Println("======================================================")
-
+		handler.PrintBookNotFound()
 		return
 	}
 
