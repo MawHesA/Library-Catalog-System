@@ -41,17 +41,25 @@ func Create(BookData *global.Data, n *int) {
 	for i := 0; i < amount; i++ {
     validInput := true
 
-		fmt.Println("Input Format :")
-		fmt.Println("BookId Title Category Writter Publishyear Status")
-		fmt.Println("======================================================")
-        fmt.Printf("Input Book Data %-3d : ", i+1)
-
+		fmt.Printf("============ Data Input For Data Number %d ============\n",i+1)
     for validInput == true {
+
+		fmt.Printf("Input Book %d Id : ", i+1)
         fmt.Scan(&BookData[*n].BookId)
+
+		fmt.Printf("Input Book %d Title : ", i+1)
 		fmt.Scan(&BookData[*n].Title)
+
+		fmt.Printf("Input Book %d Category : ", i+1)
 		fmt.Scan(&BookData[*n].Category)
+
+		fmt.Printf("Input Book  %d Writter  : ", i+1)
 		fmt.Scan(&BookData[*n].Writter)
+
+		fmt.Printf("Input Book %d PublishedYear  : ", i+1)
 		fmt.Scan(&BookData[*n].Publishyear)
+
+		fmt.Printf("Input Book %d Status : ", i+1)
 		fmt.Scan(&BookData[*n].Status)
 
 		validcategory = 	BookData[*n].Category == "Fiksi" || 
@@ -82,11 +90,6 @@ func Create(BookData *global.Data, n *int) {
 			fmt.Println("================ Please Enter ================")
 			fmt.Println("      Available | UnAvailable | Borrowed")
 			fmt.Println("================ Wrong Status ================")
-		}
-
-		if validInput || validcategory || validid == false {
-			fmt.Println()
-			fmt.Printf("Input Book Data %-3d : ", i+1)
 		}
 
 		if validcategory && validstatus && validid == true {
