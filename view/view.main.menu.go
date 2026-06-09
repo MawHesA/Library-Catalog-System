@@ -13,6 +13,7 @@ func PrintMainMenu() {
 	fmt.Printf("%-5s %-35s\n", "3.", "Display Stored Books")
 	fmt.Printf("%-5s %-35s\n", "4.", "Update Existing Book")
 	fmt.Printf("%-5s %-35s\n", "5.", "Delete Existing Book")
-	fmt.Printf("%-5s %-35s\n", "6.", "Exit Program")
+	fmt.Printf("%-5s %-35s\n", "6.", "Book Statistic")
+	fmt.Printf("%-5s %-35s\n", "7.", "Exit Program")
 	fmt.Println("======================================================")
 }

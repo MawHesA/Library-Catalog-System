@@ -24,7 +24,7 @@ func main() {
 	fmt.Print("Enter Your Desired Menu : ")
 	fmt.Scan(&menu)
 
-	for menu != 6 {
+	for menu != 7 {
 
 		fmt.Println()
 
@@ -46,7 +46,9 @@ func main() {
 
 		case 5:
 			controller.Delete(&BookData, &n)
-
+		
+		case 6:
+			controller.Statistic(/*&BookData,&n*/)
 		default:
 			handlerInvalid.PrintInvalidMenu()
 		}
