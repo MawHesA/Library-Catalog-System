@@ -10,7 +10,7 @@ func LoadDummyData(BookData *global.Data, n *int) {
 		{
 			BookId:      101,
 			Title:       "LaskarPelangi",
-			Category:    "Novel",
+			Category:    "NonFiksi",
 			Writter:     "AndreaHirata",
 			Publishyear: 2005,
 			Status:      "Available",
