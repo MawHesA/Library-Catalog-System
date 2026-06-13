@@ -48,7 +48,7 @@ func main() {
 			controller.Delete(&BookData, &n)
 
 		case 6:
-			controller.Statistic(&BookData, &n)
+			controller.Statistic(&BookData, n)
 		default:
 			handlerInvalid.PrintInvalidMenu()
 		}
