@@ -15,7 +15,7 @@ func Statistic(BookData *global.Data, n int) {
 		switch BookData[i].Category {
 		case "Fiksi":
 			stat.Fiksi = stat.Fiksi + 1
-		case "Non-Fiksi":
+		case "NonFiksi":
 			stat.NonFiksi = stat.NonFiksi + 1
 		case "Romance":
 			stat.Romance = stat.Romance + 1
