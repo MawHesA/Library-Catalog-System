@@ -12,3 +12,17 @@ type Book struct {
 }
 
 type Data [Nmax]Book
+
+type Statistic struct {
+	TotalBooks int
+
+	Fiksi    int
+	NonFiksi int
+	Romance  int
+	Horror   int
+	Fantasy  int
+
+	Available   int
+	UnAvailable int
+	Borrowed    int
+}
