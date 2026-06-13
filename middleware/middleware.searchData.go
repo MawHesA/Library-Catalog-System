@@ -80,8 +80,6 @@ func Search(BookData *global.Data, n int, idx *int) {
 			}
 		}
 	}
-
-
 	if temp > 1 {
 	fmt.Printf("%-10d %-20s %-15s %-15s %-10d %-15s\n",
 				BookData[loc].BookId,
