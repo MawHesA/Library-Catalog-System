@@ -125,9 +125,9 @@ func Create(BookData *global.Data, n *int) {
 				fmt.Println("================ The Book Must Be Under 2026! ================")
 			}
 
-			if validcategory && validstatus && validid && validyear {
+			if validcategory && validstatus && validid && validyear{
 
-				if duplicateTitle {
+				if duplicateTitle == true {
 					if confirm == "yes" {
 						*n = *n + 1
 						validInput = false

@@ -10,7 +10,7 @@ func Search(BookData *global.Data, n int, idx *int) {
 	var target int
 	var menu string
 
-	*idx = 1
+	*idx = -1
 
 	fmt.Println("Type 'back' to return or press any number to continue")
 
@@ -18,23 +18,22 @@ func Search(BookData *global.Data, n int, idx *int) {
 	if menu == "back" {
 		return
 	}
+	
 	fmt.Println("============================================")
 	fmt.Print("Type the desired Year of publish book :")
 	fmt.Scan(&target)
 
-	for i = 0; i < n; i++ {
-
-		if *idx == 1 {
-			fmt.Println("========================== DATA FOUND ==========================")
-			fmt.Printf("%-10s %-20s %-15s %-15s %-10s %-12s\n",
+	fmt.Println("================================================================")
+	fmt.Printf("%-10s %-20s %-15s %-15s %-10s %-12s\n",
 				"BOOK ID",
 				"TITLE",
 				"CATEGORY",
 				"WRITTER",
 				"YEAR",
 				"STATUS")
-			*idx = -1
-		}
+
+	for i = 0; i < n; i++ {
+
 		if BookData[i].Publishyear == target {
 			*idx = i
 			fmt.Printf("%-10d %-20s %-15s %-15s %-10d %-15s\n",
