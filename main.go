@@ -60,5 +60,3 @@ func main() {
 
 	handlerView.PrintExitMenu()
 }
-
-//nyimpen branch baru doang
