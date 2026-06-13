@@ -7,33 +7,33 @@ import (
 
 func Statistic(BookData *global.Data, n int) {
 
-	var fiksi, nonFiksi, romance, horror, fantasy int
-	var available, unavailable, borrowed int
+	var stat global.Statistic
+	stat.TotalBooks = n
 
 	for i := 0; i < n; i++ {
 
 		switch BookData[i].Category {
 		case "Fiksi":
-			fiksi = fiksi + 1
+			stat.Fiksi = stat.Fiksi + 1
 		case "Non-Fiksi":
-			nonFiksi = nonFiksi + 1
+			stat.NonFiksi = stat.NonFiksi + 1
 		case "Romance":
-			romance = romance + 1
+			stat.Romance = stat.Romance + 1
 		case "Horror":
-			horror = horror + 1
+			stat.Horror = stat.Horror + 1
 		case "Fantasy":
-			fantasy = fantasy + 1
+			stat.Fantasy = stat.Fantasy + 1
 		}
 
 		switch BookData[i].Status {
 		case "Available":
-			available = available + 1
+			stat.Available = stat.Available + 1
 		case "UnAvailable":
-			unavailable = unavailable + 1
+			stat.UnAvailable = stat.UnAvailable + 1
 		case "Borrowed":
-			borrowed = borrowed + 1
+			stat.Borrowed = stat.Borrowed + 1
 		}
 	}
 
-	view.PrintStatisticMenu()
+	view.PrintStatisticMenu(stat)
 }
