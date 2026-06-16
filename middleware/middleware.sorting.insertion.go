@@ -2,7 +2,7 @@ package middleware
 
 import "librarycatalog/global"
 
-func Sortingdata(BookData *global.Data, n int) {
+func SortingInsertion(BookData *global.Data, n int) {
 
 	var i, j int
 	var temp global.Book
@@ -14,7 +14,7 @@ func Sortingdata(BookData *global.Data, n int) {
 
 		for j >= 0 && BookData[j].Publishyear > temp.Publishyear {
 			BookData[j+1] = BookData[j]
-			j--
+			j = j - 1
 		}
 
 		BookData[j+1] = temp

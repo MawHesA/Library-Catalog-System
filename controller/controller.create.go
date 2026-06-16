@@ -63,7 +63,6 @@ func Create(BookData *global.Data, n *int) {
 			fmt.Printf("Input Book %d Status : ", i+1)
 			fmt.Scan(&BookData[*n].Status)
 
-		
 			duplicateTitle := false
 			confirm = "yes"
 
@@ -125,7 +124,7 @@ func Create(BookData *global.Data, n *int) {
 				fmt.Println("================ The Book Must Be Under 2026! ================")
 			}
 
-			if validcategory && validstatus && validid && validyear{
+			if validcategory && validstatus && validid && validyear {
 
 				if duplicateTitle == true {
 					if confirm == "yes" {
@@ -143,6 +142,6 @@ func Create(BookData *global.Data, n *int) {
 		}
 	}
 
-	middleware.Sortingdata(BookData, *n)
+	middleware.SortingInsertion(BookData, *n)
 	handler.PrintAddedData()
 }

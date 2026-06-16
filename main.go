@@ -36,7 +36,6 @@ func main() {
 			middleware.Search(&BookData, n, &idx)
 
 		case 3:
-
 			handlerRead.PrintGetData()
 			controller.Read(&BookData, n)
 
