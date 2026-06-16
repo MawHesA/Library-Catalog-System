@@ -13,7 +13,7 @@ func SortingSearchSelection(BookData *global.Data, n int) {
 
 		for j = i + 1; j < n; j++ {
 
-			if BookData[j].Publishyear < BookData[min].Publishyear {
+			if BookData[j].BookId < BookData[min].BookId {
 				min = j
 			}
 		}
