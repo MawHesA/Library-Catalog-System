@@ -4,23 +4,19 @@ import "librarycatalog/global"
 
 func Sortingdata(BookData *global.Data, n int) {
 
-	var i, j, min int
+	var i, j int
 	var temp global.Book
 
 	for i = 0; i < n-1; i++ {
 
-		min = i
+		temp = BookData[i]
+		j = i - 1
 
-		for j = i + 1; j < n; j++ {
-
-			if BookData[j].BookId < BookData[min].BookId {
-
-				min = j
-			}
+		for j >= 0 && BookData[j].Publishyear > temp.Publishyear {
+			BookData[j+1] = BookData[j]
+			j--
 		}
 
-		temp = BookData[i]
-		BookData[i] = BookData[min]
-		BookData[min] = temp
+		BookData[j+1] = temp
 	}
 }
