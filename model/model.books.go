@@ -31,5 +31,5 @@ func LoadDummyData(BookData *global.Data, n *int) {
 		(*BookData)[i] = dummy[i]
 	}
 
-	middleware.SortingSelection(BookData, *n)
+	middleware.SortingDataSelection(BookData, *n)
 }

@@ -142,6 +142,6 @@ func Create(BookData *global.Data, n *int) {
 		}
 	}
 
-	middleware.SortingInsertion(BookData, *n)
+	middleware.SortingDataInsertion(BookData, *n)
 	handler.PrintAddedData()
 }

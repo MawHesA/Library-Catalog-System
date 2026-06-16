@@ -2,7 +2,7 @@ package middleware
 
 import "librarycatalog/global"
 
-func SortingInsertion(BookData *global.Data, n int) {
+func SortingDataInsertion(BookData *global.Data, n int) {
 
 	var i, j int
 	var temp global.Book
