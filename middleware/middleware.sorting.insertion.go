@@ -7,7 +7,7 @@ func SortingInsertion(BookData *global.Data, n int) {
 	var i, j int
 	var temp global.Book
 
-	for i = 0; i < n-1; i++ {
+	for i = 1; i < n; i++ {
 
 		temp = BookData[i]
 		j = i - 1
