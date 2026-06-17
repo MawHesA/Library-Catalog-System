@@ -2,7 +2,7 @@ package middleware
 
 import "librarycatalog/global"
 
-func Sortingdata(BookData *global.Data, n int) {
+func SortingDataSelection(BookData *global.Data, n int) {
 
 	var i, j, min int
 	var temp global.Book
@@ -13,8 +13,7 @@ func Sortingdata(BookData *global.Data, n int) {
 
 		for j = i + 1; j < n; j++ {
 
-			if BookData[j].BookId < BookData[min].BookId {
-
+			if BookData[j].Publishyear < BookData[min].Publishyear {
 				min = j
 			}
 		}

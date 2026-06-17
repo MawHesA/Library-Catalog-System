@@ -2,6 +2,7 @@ package model
 
 import (
 	"librarycatalog/global"
+	"librarycatalog/middleware"
 )
 
 func LoadDummyData(BookData *global.Data, n *int) {
@@ -29,4 +30,6 @@ func LoadDummyData(BookData *global.Data, n *int) {
 	for i := 0; i < *n; i++ {
 		(*BookData)[i] = dummy[i]
 	}
+
+	middleware.SortingDataSelection(BookData, *n)
 }

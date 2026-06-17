@@ -7,7 +7,6 @@ import (
 	handlerInvalid "librarycatalog/handler/invalid"
 	handlerRead "librarycatalog/handler/read"
 	handlerUpdate "librarycatalog/handler/update"
-	"librarycatalog/middleware"
 	"librarycatalog/model"
 	handlerView "librarycatalog/view"
 )
@@ -33,10 +32,9 @@ func main() {
 		case 1:
 			controller.Create(&BookData, &n)
 		case 2:
-			middleware.Search(&BookData, n, &idx)
+			controller.Search(&BookData, n, &idx)
 
 		case 3:
-
 			handlerRead.PrintGetData()
 			controller.Read(&BookData, n)
 
