@@ -8,8 +8,6 @@ import (
 func SequentialSearch(BookData *global.Data, n int, targetTitle string, idx *int) {
 	var i int
 
-	*idx = -1
-
 	fmt.Println("================================================================")
 	fmt.Printf("%-10s %-20s %-15s %-15s %-10s %-12s\n",
 		"BOOK ID",
