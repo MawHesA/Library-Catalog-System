@@ -6,15 +6,16 @@ import (
 )
 
 func BinarySearchID(BookData *global.Data, n int, targetID int, idx *int) {
+	var left, mid, right int
 
-	low := 0
-	high := n - 1
+	left = 0
+	right = n - 1
 
 	*idx = -1
 
-	for low <= high {
+	for left <= right {
 
-		mid := (low + high) / 2
+		mid = (left + right) / 2
 
 		if BookData[mid].BookId == targetID {
 
@@ -41,9 +42,9 @@ func BinarySearchID(BookData *global.Data, n int, targetID int, idx *int) {
 		}
 
 		if targetID < BookData[mid].BookId {
-			high = mid - 1
+			right = mid - 1
 		} else {
-			low = mid + 1
+			left = mid + 1
 		}
 	}
 
